@@ -86,6 +86,33 @@ public class StateMachineController : MonoBehaviour
         
         nav.enabled = true;
     }
+
+    public void MoveToPlayer(){
+        SetNav(false);
+        LerpPosition(ControllerReferences.player.transform.position + ControllerReferences.player.transform.forward * 2f);
+    }
+    
+    [SerializeField] private AnimationCurve interpolationCurve;
+    private IEnumerator LerpPosition(Vector3 endPosition){
+        float timeElapsed = 0f;
+
+        while(timeElapsed < 0.25f){
+            float t = timeElapsed / 0.25f;
+            t = interpolationCurve.Evaluate(t);
+
+            var newPos = Vector3.Lerp(transform.position, endPosition, t);
+
+            // Debug.Log($"{newPos}");
+            transform.position = newPos;
+
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        Debug.Log($"Setting Zombie Position to in front of the Player");
+        transform.position = endPosition;
+    }
+
     #endregion
 
     #region Access Methods
