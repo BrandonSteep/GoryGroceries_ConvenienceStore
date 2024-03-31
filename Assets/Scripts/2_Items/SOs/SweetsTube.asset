@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: SweetsTube
+  m_EditorClassIdentifier: 
+  itemName: Tube of Sweets
+  price: 1.5
+  pickup: {fileID: 4570614843629858056, guid: ae781cc982e8e434cbe0bbd7258985bf, type: 3}
+  itemInBag: {fileID: 734862912699613928, guid: 4b9ada3d925a8e14d90183e2c849a9af, type: 3}
+  heldItem: {fileID: 7722037378552550447, guid: f195c3342bda2df45a47d539d25baea4, type: 3}
+  image: {fileID: 0}

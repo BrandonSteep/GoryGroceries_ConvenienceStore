@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Bleach
+  m_EditorClassIdentifier: 
+  itemName: Bleach
+  price: 1.5
+  pickup: {fileID: 750004443522941077, guid: eda581f012e8cdb48ba2726c3bcd383d, type: 3}
+  itemInBag: {fileID: 4151815845039490905, guid: a85f60245f0afa34596b24c398b31b48, type: 3}
+  heldItem: {fileID: 6427264378614672865, guid: 884e693e69d3ff64092a72723ef7e8b1, type: 3}
+  image: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Red Wine
+  m_EditorClassIdentifier: 
+  itemName: Red Wine
+  price: 14.99
+  pickup: {fileID: 9118373412999637462, guid: 353828d690af439439d5d3ea258474d8, type: 3}
+  itemInBag: {fileID: 7818138855532392156, guid: f18b117b1f4a31240a767b08bffb205e, type: 3}
+  heldItem: {fileID: 7882349629395477356, guid: 15b88faee9b39fd47a44d78a62616472, type: 3}
+  image: {fileID: 0}

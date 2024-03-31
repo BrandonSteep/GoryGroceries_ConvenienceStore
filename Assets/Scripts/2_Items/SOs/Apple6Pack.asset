@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Apple6Pack
+  m_EditorClassIdentifier: 
+  itemName: Apple
+  price: 1.45
+  pickup: {fileID: 2126401575106984701, guid: 1701a8a436cd616438f999e48426bbf9, type: 3}
+  itemInBag: {fileID: 949165827567484859, guid: 085ba0e71a8d47e4fa66d586eb402276, type: 3}
+  heldItem: {fileID: 8527423895190013384, guid: dd90976d9d4a8b94fac488aa7f860057, type: 3}
+  image: {fileID: 0}

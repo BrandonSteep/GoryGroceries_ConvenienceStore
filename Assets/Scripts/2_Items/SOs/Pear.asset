@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Pear
+  m_EditorClassIdentifier: 
+  itemName: Pear
+  price: 0.49
+  pickup: {fileID: 1767301424893393619, guid: 00f55150888faeb40a3384cb35853917, type: 3}
+  itemInBag: {fileID: 1850916937561797546, guid: 84e3135646feb9841b0c52c867a6d9b0, type: 3}
+  heldItem: {fileID: 1252447237905252916, guid: 3e70498cd26b01a43b4c1c64d38a56fd, type: 3}
+  image: {fileID: 0}

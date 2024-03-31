@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Painkillers
+  m_EditorClassIdentifier: 
+  itemName: Painkillers
+  price: 3.39
+  pickup: {fileID: 8252053619045393961, guid: 4a0a4bea7ca6e72489a2ee0706b92f6a, type: 3}
+  itemInBag: {fileID: 2787320111005113425, guid: 5bd9a15f3ba6a804dbf2b47911c7cf2f, type: 3}
+  heldItem: {fileID: 3792634383791123192, guid: 6db950bd2ebfa284b9e0f7d001dc77bf, type: 3}
+  image: {fileID: 0}

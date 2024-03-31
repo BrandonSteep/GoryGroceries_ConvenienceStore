@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Pizza
+  m_EditorClassIdentifier: 
+  itemName: Pizza
+  price: 4.5
+  pickup: {fileID: 3434742292198430209, guid: 5a1bf5c80477e9940bc3f32366130e22, type: 3}
+  itemInBag: {fileID: 7765742569800530733, guid: 3882b635423f2a64cbccfb77b4c96bbe, type: 3}
+  heldItem: {fileID: 731703595169393191, guid: 4f1c29e28a0575649b9fe563d0bf2f2b, type: 3}
+  image: {fileID: 0}

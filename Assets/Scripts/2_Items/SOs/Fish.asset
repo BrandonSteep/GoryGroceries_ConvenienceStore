@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Fish
+  m_EditorClassIdentifier: 
+  itemName: Fish
+  price: 6.25
+  pickup: {fileID: 3030205730006043545, guid: 3d7eaddcbe8b27d43bfa5da469507f28, type: 3}
+  itemInBag: {fileID: 7809874489885923752, guid: ab690bc9bb3fd1145a12488d28d89630, type: 3}
+  heldItem: {fileID: 2501289702489139891, guid: 1e71e661de36b114f94a160627ef0a06, type: 3}
+  image: {fileID: 0}

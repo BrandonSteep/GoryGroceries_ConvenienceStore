@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Cereal
+  m_EditorClassIdentifier: 
+  itemName: Cereal
+  price: 3.79
+  pickup: {fileID: 1940739131919216526, guid: 47bc3460b7b408e4a8a452bf0bdbf99e, type: 3}
+  itemInBag: {fileID: 3200097659346797440, guid: 1ac8fddacae6d754ebdc7670c0800995, type: 3}
+  heldItem: {fileID: 3525454105507495378, guid: abadcd70b8f0f7042927bd35aa45ff2b, type: 3}
+  image: {fileID: 0}

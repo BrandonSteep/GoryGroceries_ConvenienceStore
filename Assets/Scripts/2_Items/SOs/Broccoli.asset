@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Broccoli
+  m_EditorClassIdentifier: 
+  itemName: Broccoli
+  price: 0.82
+  pickup: {fileID: 8236034343545191897, guid: fc8cd0134bddff549a767e60d5cf9c90, type: 3}
+  itemInBag: {fileID: 4609924277960360604, guid: 3ba11c9ddfad78c4da069417fbc8a7f2, type: 3}
+  heldItem: {fileID: 6637682399355207266, guid: 7a6e06b33c2808f47aa7cbbbfdf412b7, type: 3}
+  image: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Chocolate
+  m_EditorClassIdentifier: 
+  itemName: Chocolate
+  price: 2
+  pickup: {fileID: 1111486698502411758, guid: 0bdfeef012d2f1e46ae0d646a70fb0eb, type: 3}
+  itemInBag: {fileID: 7950213743700066791, guid: 8690b9727addcdf4aa16e63d5160a860, type: 3}
+  heldItem: {fileID: 2527460624380296154, guid: ab98942d508212e4c966793ebe6bfa04, type: 3}
+  image: {fileID: 0}

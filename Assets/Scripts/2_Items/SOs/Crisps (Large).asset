@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Crisps (Large)
+  m_EditorClassIdentifier: 
+  itemName: Crisps
+  price: 2
+  pickup: {fileID: 7259095984146860598, guid: b0919e8bc30854b4c800404d3c74d852, type: 3}
+  itemInBag: {fileID: 399553139748821103, guid: 059e69d73447d294990c924c6dac8000, type: 3}
+  heldItem: {fileID: 5649904407632635903, guid: 27c51e6232c1d77479986a6e8f50f198, type: 3}
+  image: {fileID: 0}

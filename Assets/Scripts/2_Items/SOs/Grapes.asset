@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Grapes
+  m_EditorClassIdentifier: 
+  itemName: Grapes
+  price: 1.8
+  pickup: {fileID: 2813670552059315343, guid: 0f1d1430141f2214f9fdca60ae68af29, type: 3}
+  itemInBag: {fileID: 915552121507549302, guid: cadc7e77f67c14c4b8389b98655c0aa5, type: 3}
+  heldItem: {fileID: 2076149822086013865, guid: 225d141288eaf4241ad305499b3f5121, type: 3}
+  image: {fileID: 0}

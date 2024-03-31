@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
+  m_Name: Carrot
+  m_EditorClassIdentifier: 
+  itemName: Carrot
+  price: 0.65
+  pickup: {fileID: 1254198922450272668, guid: e61c71dd9318c4f43b9889bc42543036, type: 3}
+  itemInBag: {fileID: 3891705753168757785, guid: 1ff02b1cdf51eb142a0b23f107d1dc93, type: 3}
+  heldItem: {fileID: 5602291694484715357, guid: 6b9f7bbc831f07a42b339f32ce97d4ec, type: 3}
+  image: {fileID: 0}
