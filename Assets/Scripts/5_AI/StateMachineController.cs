@@ -7,6 +7,8 @@ public class StateMachineController : MonoBehaviour
     [SerializeField] private _State startState;
     [SerializeField] private _State currentState;
     [SerializeField] private _State moveState;
+    [SerializeField] private _State biteState;
+    [SerializeField] private LookAt lookAt;
     
     private NavMeshAgent nav;
     private ZombieAnimationController anim;
@@ -41,6 +43,10 @@ public class StateMachineController : MonoBehaviour
         TransitionState(moveState);
     }
 
+    public void SetBiteState(){
+        TransitionState(biteState);
+    }
+
     public void SetNav(bool active){
         if(active){
             nav.enabled = true;
@@ -73,39 +79,14 @@ public class StateMachineController : MonoBehaviour
 
 
 #region Track Player
-    // [SerializeField] private AnimationCurve curve;
+
     [SerializeField] private float lookAtSpeed;
-    private Coroutine LookCoroutine;
 
     public void TrackPlayer(){
-
-
-        if(LookCoroutine != null){
-            StopCoroutine(LookCoroutine);
-        }
-        LookCoroutine = StartCoroutine(LookAt());
-    }
-
-    private IEnumerator LookAt(){
-        
         Debug.Log("Tracking Player for Attack");
 
-
-        Vector3 lookPosition = new Vector3(ControllerReferences.player.transform.position.x, transform.position.y, ControllerReferences.player.transform.position.z);
-
-        Quaternion lookRotation = Quaternion.LookRotation(lookPosition - transform.position);
-
-        float time = 0f;
-
-        while(time < 1){
-            Quaternion newRotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
-
-            transform.rotation = newRotation;
-
-            time += Time.deltaTime * lookAtSpeed;
-            yield return null;
-        }
-
+        lookAt.StartLookAt(lookAtSpeed);
+        
         nav.enabled = true;
     }
 #endregion

@@ -24,12 +24,12 @@ public class PlayerStatus : Status, IStatus
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "Grab Trigger" && canTakeDamage){
-            GrabbedByZombie();
+            GrabbedByZombie(other);
         }
     }
 
 #region Zombie Grab Logic
-    public void GrabbedByZombie(){
+    public void GrabbedByZombie(Collider other){
         foreach(Behaviour i in behavioursToDisableOnGrab){
             i.enabled = false;
         }
@@ -45,6 +45,29 @@ public class PlayerStatus : Status, IStatus
 
         ControllerReferences.playerKnockback.AddImpact(-transform.forward, 15f);
         Invoke("ResetDamage", iFrames);
+    }
+
+    // Smooth Damp Interpolation for Zombie Grab Movement
+    [SerializeField] private AnimationCurve interpolationCurve;
+    [SerializeField] private float interpolationDuration = 0.75f;
+    private IEnumerator LerpValue(Vector3 endPosition){
+        float timeElapsed = 0f;
+
+        while(timeElapsed < interpolationDuration){
+            float t = timeElapsed / interpolationDuration;
+            t = interpolationCurve.Evaluate(t);
+
+            var newPos = Vector3.Lerp(this.transform.position, endPosition, t);
+
+            // Debug.Log($"{newPos}");
+            transform.position = newPos;
+
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.position = ControllerReferences.player.transform.position;
     }
 #endregion
     
