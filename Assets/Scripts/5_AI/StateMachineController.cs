@@ -87,17 +87,23 @@ public class StateMachineController : MonoBehaviour
         nav.enabled = true;
     }
 
-    public void MoveToPlayer(){
+    public void MoveToPlayer(Transform movePosition){
         SetNav(false);
-        LerpPosition(ControllerReferences.player.transform.position + ControllerReferences.player.transform.forward * 2f);
+        StartCoroutine(LerpPosition(movePosition));
     }
     
     [SerializeField] private AnimationCurve interpolationCurve;
-    private IEnumerator LerpPosition(Vector3 endPosition){
+    [SerializeField] private float interpolationDuration;
+    private IEnumerator LerpPosition(Transform endTransform){
+        yield return new WaitForSeconds(0.25f);
+
+        Vector3 endPosition = new Vector3(endTransform.position.x, this.transform.position.y, endTransform.position.z);
+        TrackPlayer();
+
         float timeElapsed = 0f;
 
-        while(timeElapsed < 0.25f){
-            float t = timeElapsed / 0.25f;
+        while(timeElapsed < interpolationDuration){
+            float t = timeElapsed / interpolationDuration;
             t = interpolationCurve.Evaluate(t);
 
             var newPos = Vector3.Lerp(transform.position, endPosition, t);

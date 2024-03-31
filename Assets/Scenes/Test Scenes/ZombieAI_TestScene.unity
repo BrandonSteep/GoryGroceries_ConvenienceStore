@@ -160,17 +160,6 @@ Transform:
   m_Father: {fileID: 1919883259}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &684722805 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 237196572910984602, guid: 9cdc78a755ec76d408dbb9fc6892d00b, type: 3}
-  m_PrefabInstance: {fileID: 2004785528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8483d4d5e50db2488dca41d7fd1ed07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &871780689
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,62 +956,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cdc78a755ec76d408dbb9fc6892d00b, type: 3}
---- !u!1 &2004785532 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5187244767781740151, guid: 9cdc78a755ec76d408dbb9fc6892d00b, type: 3}
-  m_PrefabInstance: {fileID: 2004785528}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2004785535 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2004785535, guid: 9cdc78a755ec76d408dbb9fc6892d00b, type: 3}
-  m_PrefabInstance: {fileID: 2004785528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004785532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8483d4d5e50db2488dca41d7fd1ed07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2004785541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004785532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f03ccdb4a0c00d458bac36ad6f807e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interpolationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  interpolationDuration: 0.5
-  lookAtSpeed: 1.5
-  lookAt: {fileID: 2004785535}
-  cameraLookAt: {fileID: 684722805}
 --- !u!1 &2128362711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,37 +1061,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2195292565137633298, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: interpolationCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2195292565137633298, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: interpolationCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2195292565137633298, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: interpolationCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2195292565137633298, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: interpolationCurve.m_Curve.Array.data[0].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2195292565137633298, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: interpolationCurve.m_Curve.Array.data[0].outSlope
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2623966272187646174, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
       propertyPath: m_Name
       value: _Zombie_Staff_Jay
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930535752810476332, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930535752810476334, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
-      propertyPath: m_Radius
-      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 3396246010184964708, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
       propertyPath: m_RootOrder

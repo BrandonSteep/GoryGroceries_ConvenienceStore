@@ -371,10 +371,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3396246010184964708}
-  - component: {fileID: 8773521234094997534}
   - component: {fileID: 2930535753104890596}
-  - component: {fileID: 4441080648612022432}
   - component: {fileID: 2195292565137633298}
+  - component: {fileID: 4441080648612022432}
+  - component: {fileID: 8773521234094997534}
   - component: {fileID: 5293196154636782887}
   - component: {fileID: 1515225002}
   - component: {fileID: 5040115845655412962}
@@ -403,27 +403,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.998, z: 0}
---- !u!95 &8773521234094997534
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2623966272187646174}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 62b2c0a2d9549144b849af46775cfb55, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5d51b8a422730e546adddb5ed6556543, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!195 &2930535753104890596
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -446,20 +425,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4441080648612022432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2623966272187646174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f5d4c39deae2a42a94728714d45428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxIdleAnims: 5
-  maxWalkAnims: 2
 --- !u!114 &2195292565137633298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +444,66 @@ MonoBehaviour:
   lookAt: {fileID: 1515225002}
   focalPoint: {fileID: 305152981327768740}
   lookAtSpeed: 3
+  interpolationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  interpolationDuration: 0.5
+--- !u!114 &4441080648612022432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623966272187646174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f5d4c39deae2a42a94728714d45428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxIdleAnims: 5
+  maxWalkAnims: 2
+--- !u!95 &8773521234094997534
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623966272187646174}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 62b2c0a2d9549144b849af46775cfb55, type: 3}
+  m_Controller: {fileID: 9100000, guid: 5d51b8a422730e546adddb5ed6556543, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5293196154636782887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2930535752810476333
 Transform:
   m_ObjectHideFlags: 0
@@ -620,7 +645,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.35
+  m_Radius: 0.45
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

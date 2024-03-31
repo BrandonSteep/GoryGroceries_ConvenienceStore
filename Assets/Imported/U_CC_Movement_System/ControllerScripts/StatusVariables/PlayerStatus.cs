@@ -34,10 +34,15 @@ public class PlayerStatus : Status, IStatus
     public float GetIFrames(){
         return iFrames;
     }
-
+    
     public void AddIFrames(){
         canTakeDamage = false;
         Invoke("ResetDamage", iFrames);
+    }
+
+    public void AddIFrames(float newIFrames){
+        canTakeDamage = false;
+        Invoke("ResetDamage", newIFrames);
     }
     
     public void Die()

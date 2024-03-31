@@ -8,6 +8,7 @@ public class PlayerGrabbed : MonoBehaviour
     [Header("Interpolation Variables")]
     [SerializeField] private AnimationCurve interpolationCurve;
     [SerializeField] private float interpolationDuration = 0.75f;
+    [SerializeField] private Transform zombieSnapPosition;
     [Header("Look At Variables")]
     [SerializeField] private float lookAtSpeed = 2f;
     [SerializeField] private LookAt lookAt;
@@ -21,9 +22,8 @@ public class PlayerGrabbed : MonoBehaviour
         // ControllerReferences.playerController.enabled = false;
 
         ControllerReferences.playerAnim.SetInteger("Walking", 0);
+        ControllerReferences.playerAnim.SetTrigger("PlayerBitten");
         
-
-        Debug.Log($"player position moving to {other.transform.position}");
         // Move Player Into Position
         StartCoroutine(LerpPosition(new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z)));
 
@@ -32,19 +32,22 @@ public class PlayerGrabbed : MonoBehaviour
         if(lookAt == null){
             lookAt = GetComponent<LookAt>();
         }
-        Debug.Log("Looking At Zombie");
         Vector3 horizontalLookAtPosition = new Vector3(grabbingEnemy.transform.position.x, transform.position.y, grabbingEnemy.transform.position.z);
         lookAt.StartLookAt(this.transform, lookAtSpeed, horizontalLookAtPosition);
         cameraLookAt.StartLookAt(cameraLookAt.transform, lookAtSpeed, grabbingEnemy.CheckFocalPoint().position);
 
         // Move Enemy to Player
-        grabbingEnemy.MoveToPlayer();
+        grabbingEnemy.MoveToPlayer(zombieSnapPosition);
     }
     public void EndGrab(){
-        // ControllerReferences.playerController.enabled = true;
+        ControllerReferences.playerStatus.AddIFrames();
         ControllerReferences.playerController.ControllerEnabled();
         ControllerReferences.playerController.ResetInput();
         ControllerReferences.playerKnockback.AddImpact(-transform.forward, 15f);
+    }
+
+    public void ResetBittenAnimTrigger(){
+        ControllerReferences.playerAnim.ResetTrigger("PlayerBitten");
     }
 
     
@@ -64,7 +67,6 @@ public class PlayerGrabbed : MonoBehaviour
 
             yield return null;
         }
-        Debug.Log($"Setting Player Position to {endPosition}");
         transform.position = endPosition;
     }
 }

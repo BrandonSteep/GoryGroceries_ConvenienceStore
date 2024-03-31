@@ -68062,7 +68062,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 5
+  - time: 4.5
     functionName: SetMoveState
     data: 
     objectReferenceParameter: {fileID: 0}
