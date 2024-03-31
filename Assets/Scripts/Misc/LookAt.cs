@@ -6,25 +6,23 @@ public class LookAt : MonoBehaviour
 {
     private Coroutine LookCoroutine;
 
-    public void StartLookAt(float lookAtSpeed){
+    public void StartLookAt(Transform objectToLook, float lookAtSpeed, Vector3 positionToLookAt){
         if(LookCoroutine != null){
             StopCoroutine(LookCoroutine);
         }
-        LookCoroutine = StartCoroutine(LookAtPosition(lookAtSpeed));
+        LookCoroutine = StartCoroutine(LookAtPosition(objectToLook, lookAtSpeed, positionToLookAt));
     }
     
-    private IEnumerator LookAtPosition(float lookAtSpeed){
+    private IEnumerator LookAtPosition(Transform objectToLook, float lookAtSpeed, Vector3 positionToLookAt){
         
-        Vector3 lookPosition = new Vector3(ControllerReferences.player.transform.position.x, transform.position.y, ControllerReferences.player.transform.position.z);
-
-        Quaternion lookRotation = Quaternion.LookRotation(lookPosition - transform.position);
+        Quaternion lookRotation = Quaternion.LookRotation(positionToLookAt - objectToLook.position);
 
         float time = 0f;
 
         while(time < 1){
-            Quaternion newRotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
+            Quaternion newRotation = Quaternion.Slerp(objectToLook.rotation, lookRotation, time);
 
-            transform.rotation = newRotation;
+            objectToLook.rotation = newRotation;
 
             time += Time.deltaTime * lookAtSpeed;
             yield return null;

@@ -29,4 +29,8 @@ public class ZombieAnimationController : MonoBehaviour
     public void SetBool(string name, bool value){
         anim.SetBool(name, value);
     }
+
+    public void SetTrigger(string name){
+        anim.SetTrigger(name);
+    }
 }

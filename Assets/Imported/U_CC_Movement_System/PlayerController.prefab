@@ -987,6 +987,8 @@ GameObject:
   - component: {fileID: 5187244767781740152}
   - component: {fileID: 5076315817182389758}
   - component: {fileID: 8335154008694859754}
+  - component: {fileID: 2004785534}
+  - component: {fileID: 2004785535}
   m_Layer: 10
   m_Name: PlayerController
   m_TagString: Player
@@ -1136,7 +1138,78 @@ MonoBehaviour:
   currentHp: {fileID: 11400000, guid: f960e3d8ddfa07e4b884e72e3e58105a, type: 2}
   maxHp: {fileID: 11400000, guid: b0ff99d38b7dc53459a8a80fdb9eca4e, type: 2}
   isAlive: 1
-  canTakeDamage: 0
+  canTakeDamage: 1
+  behavioursToDisableOnGrab:
+  - {fileID: 5187244767781740152}
+  iFrames: 1
+  interpolationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  interpolationDuration: 0.1
+  lookAt: {fileID: 2004785535}
+  cameraLookAt: {fileID: 237196572910984602}
+  lookAtSpeed: 2
+--- !u!114 &2004785534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187244767781740151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c88b130960851b49b3ae9e83e530028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 0c63129c4afa2794ea030c9510f89756, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8335154008694859754}
+        m_TargetAssemblyTypeName: PlayerStatus, Assembly-CSharp
+        m_MethodName: EndGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2004785535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187244767781740151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8483d4d5e50db2488dca41d7fd1ed07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5187244767959568311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1256,7 @@ GameObject:
   - component: {fileID: 5187244769329963795}
   - component: {fileID: 5187244769344974276}
   - component: {fileID: 5187244769344974277}
+  - component: {fileID: 237196572910984602}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1238,7 +1312,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 2135
   m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1335,6 +1409,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &237196572910984602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187244769329963792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8483d4d5e50db2488dca41d7fd1ed07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6835231088908358602
 GameObject:
   m_ObjectHideFlags: 0

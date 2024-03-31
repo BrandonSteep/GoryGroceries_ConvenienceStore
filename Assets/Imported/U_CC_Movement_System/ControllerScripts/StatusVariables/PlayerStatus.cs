@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class PlayerStatus : Status, IStatus
 {
-    [SerializeField] private Behaviour[] behavioursToDisableOnGrab;
     [Tooltip("This value is set in Seconds")][SerializeField] private float iFrames = 1f;
 
     public void TakeDamage()
     {
-        if (canTakeDamage)
-        {
-            ControllerReferences.playerAnim.SetTrigger("TakeDamage");
-            currentHp.value -= 25f;
-            canTakeDamage = false;
-        }
+        ControllerReferences.playerAnim.SetTrigger("TakeDamage");
+        currentHp.value -= 25f;
+        canTakeDamage = false;
     }
 
     public void ResetDamage()
@@ -24,35 +20,55 @@ public class PlayerStatus : Status, IStatus
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "Grab Trigger" && canTakeDamage){
+            canTakeDamage = false;
             Debug.Log("Player Grabbed!");
             GrabbedByZombie(other);
         }
     }
 
 #region Zombie Grab Logic
+
+    [Header("Zombie Grab Variables")]
+    // Smooth Damp Interpolation for Zombie Grab Movement
+    [SerializeField] private AnimationCurve interpolationCurve;
+    [SerializeField] private float interpolationDuration = 0.75f;
+    [SerializeField] private LookAt lookAt;
+    [SerializeField] private LookAt cameraLookAt;
+    [SerializeField] private float lookAtSpeed = 2f;
+
     public void GrabbedByZombie(Collider other){
-        foreach(Behaviour i in behavioursToDisableOnGrab){
-            i.enabled = false;
-        }
+        StateMachineController grabbingEnemy = other.transform.parent.GetComponent<StateMachineController>();
+        grabbingEnemy.SetAnimTrigger("Bite");
+
+        ControllerReferences.playerController.ControllerDisabled();
+        // ControllerReferences.playerController.enabled = false;
+
         ControllerReferences.playerAnim.SetInteger("Walking", 0);
+        
+
         // Move Player Into Position
-        StartCoroutine(LerpPosition(other.transform.position));
+        StartCoroutine(LerpPosition(new Vector3(other.transform.position.x, other.transform.position.y -.1f, other.transform.position.z)));
+
 
         // Make Player Look At Zombie
-    }
-
-    public void EndGrab(){
-        foreach(Behaviour i in behavioursToDisableOnGrab){
-            i.enabled = true;
+        if(lookAt == null){
+            lookAt = GetComponent<LookAt>();
         }
+        Debug.Log("Looking At Zombie");
+        Vector3 horizontalLookAtPosition = new Vector3(grabbingEnemy.transform.position.x, transform.position.y, grabbingEnemy.transform.position.z);
+        lookAt.StartLookAt(this.transform, lookAtSpeed, horizontalLookAtPosition);
 
+        cameraLookAt.StartLookAt(cameraLookAt.transform, lookAtSpeed, grabbingEnemy.CheckFocalPoint().position);
+    }
+    public void EndGrab(){
+        // ControllerReferences.playerController.enabled = true;
+        ControllerReferences.playerController.ControllerEnabled();
+        ControllerReferences.playerController.ResetInput();
         ControllerReferences.playerKnockback.AddImpact(-transform.forward, 15f);
         Invoke("ResetDamage", iFrames);
     }
 
-    // Smooth Damp Interpolation for Zombie Grab Movement
-    [SerializeField] private AnimationCurve interpolationCurve;
-    [SerializeField] private float interpolationDuration = 0.75f;
+    
     private IEnumerator LerpPosition(Vector3 endPosition){
         float timeElapsed = 0f;
 
@@ -60,7 +76,7 @@ public class PlayerStatus : Status, IStatus
             float t = timeElapsed / interpolationDuration;
             t = interpolationCurve.Evaluate(t);
 
-            var newPos = Vector3.Lerp(this.transform.position, endPosition, t);
+            var newPos = Vector3.Lerp(transform.position, endPosition, t);
 
             // Debug.Log($"{newPos}");
             transform.position = newPos;
@@ -70,7 +86,7 @@ public class PlayerStatus : Status, IStatus
             yield return null;
         }
 
-        transform.position = ControllerReferences.player.transform.position;
+        transform.position = endPosition;
     }
 #endregion
     

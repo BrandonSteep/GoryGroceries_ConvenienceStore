@@ -9,6 +9,7 @@ public class StateMachineController : MonoBehaviour
     [SerializeField] private _State moveState;
     [SerializeField] private _State biteState;
     [SerializeField] private LookAt lookAt;
+    [SerializeField] private Transform focalPoint;
     
     private NavMeshAgent nav;
     private ZombieAnimationController anim;
@@ -74,23 +75,34 @@ public class StateMachineController : MonoBehaviour
     }
     #endregion
 
-    public void SetAnimBool(string name, bool value){
-        anim.SetBool(name, value);
-    }
-
-    public _State CheckFOV(_State successState, _State failState){
-        return fieldOfView.CheckFOV(this, successState, failState);
-    }
-
     #region Track Player
     [SerializeField] private float lookAtSpeed;
 
     public void TrackPlayer(){
         Debug.Log("Tracking Player for Attack");
 
-        lookAt.StartLookAt(lookAtSpeed);
+        Vector3 lookPosition = new Vector3(ControllerReferences.player.transform.position.x, transform.position.y, ControllerReferences.player.transform.position.z);
+        lookAt.StartLookAt(this.transform, lookAtSpeed, lookPosition);
         
         nav.enabled = true;
+    }
+    #endregion
+
+    #region Access Methods
+    public void SetAnimBool(string name, bool value){
+        anim.SetBool(name, value);
+    }
+
+    public void SetAnimTrigger(string name){
+        anim.SetTrigger(name);
+    }
+
+    public _State CheckFOV(_State successState, _State failState){
+        return fieldOfView.CheckFOV(this, successState, failState);
+    }
+
+    public Transform CheckFocalPoint(){
+        return focalPoint;
     }
     #endregion
 }

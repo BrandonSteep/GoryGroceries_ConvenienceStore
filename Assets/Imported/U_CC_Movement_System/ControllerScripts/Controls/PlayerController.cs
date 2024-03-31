@@ -87,14 +87,19 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         UpdateGravity();
-        UpdateMovement();
         UpdateStamina();
+        
+        if(controller.enabled){
+            UpdateMovement();
+        }
 
         //Debug.Log("stamina = " + stamina);
     }
 
     void Update(){
-        UpdateMouseLook();
+        if(controller.enabled){
+            UpdateMouseLook();
+        }
     }
     #endregion
 
@@ -264,6 +269,15 @@ public class PlayerController : MonoBehaviour
     public void ControllerDisabled()
     {
         controller.enabled = false;
+    }
+
+    public void ResetInput(){
+        horizontalInput = new Vector2(0f,0f);
+        mouseLookInput = new Vector2(0f,0f);
+        running = 0;
+        aiming = 0;
+
+        cameraPitch = 0f;
     }
     #endregion
 }

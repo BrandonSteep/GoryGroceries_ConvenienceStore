@@ -376,6 +376,8 @@ GameObject:
   - component: {fileID: 4441080648612022432}
   - component: {fileID: 2195292565137633298}
   - component: {fileID: 5293196154636782887}
+  - component: {fileID: 1515225002}
+  - component: {fileID: 5040115845655412962}
   m_Layer: 11
   m_Name: _Zombie_Staff_Jay
   m_TagString: Untagged
@@ -390,7 +392,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2623966272187646174}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000018358229}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.000017508202}
   m_LocalPosition: {x: -0.037858337, y: -0.15, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -456,8 +458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f5d4c39deae2a42a94728714d45428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIdleAnims: 4
-  maxWalkAnims: 1
+  maxIdleAnims: 5
+  maxWalkAnims: 2
 --- !u!114 &2195292565137633298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +474,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startState: {fileID: 11400000, guid: f50a19783e9be09489fc01c6fba2d41a, type: 2}
   currentState: {fileID: 0}
+  moveState: {fileID: 11400000, guid: 2af3fb0be9ecb4646b90d4f43aecef28, type: 2}
+  biteState: {fileID: 0}
+  lookAt: {fileID: 1515225002}
+  focalPoint: {fileID: 305152981327768740}
+  lookAtSpeed: 3
 --- !u!114 &5293196154636782887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,14 +491,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0094775f3388d4546b73333fd20615be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  angle: 0
+  radius: 6
+  angle: 145
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
+--- !u!114 &1515225002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623966272187646174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8483d4d5e50db2488dca41d7fd1ed07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5040115845655412962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623966272187646174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420ba5fc1160bcb41b42683bf33d5d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventToCall:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0c63129c4afa2794ea030c9510f89756, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2708903686125917855
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,11 +582,11 @@ GameObject:
   - component: {fileID: 2930535752810476334}
   m_Layer: 11
   m_Name: GrabCollider
-  m_TagString: Untagged
+  m_TagString: Grab Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2930535752810476333
 Transform:
   m_ObjectHideFlags: 0
@@ -549,7 +595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2930535752810476332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: 0.6}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
