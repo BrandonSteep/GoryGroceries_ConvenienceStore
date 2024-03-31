@@ -886,6 +886,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187244767781740150, guid: 9cdc78a755ec76d408dbb9fc6892d00b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5187244767781740151, guid: 9cdc78a755ec76d408dbb9fc6892d00b, type: 3}
       propertyPath: m_Name
       value: PlayerController
@@ -1076,6 +1080,14 @@ PrefabInstance:
     - target: {fileID: 2623966272187646174, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
       propertyPath: m_Name
       value: _Zombie_Staff_Jay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930535752810476332, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930535752810476332, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
+      propertyPath: m_TagString
+      value: Grab Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 2930535753104890597, guid: 86ba53bfc77a8ab4ba191e8069bf24f4, type: 3}
       propertyPath: m_Enabled

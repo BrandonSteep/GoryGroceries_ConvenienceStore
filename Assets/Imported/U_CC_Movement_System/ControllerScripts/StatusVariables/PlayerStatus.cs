@@ -23,16 +23,19 @@ public class PlayerStatus : Status, IStatus
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.tag == "Grab Trigger"){
-
+        if(other.tag == "Grab Trigger" && canTakeDamage){
+            GrabbedByZombie();
         }
     }
 
-    
+#region Zombie Grab Logic
     public void GrabbedByZombie(){
         foreach(Behaviour i in behavioursToDisableOnGrab){
             i.enabled = false;
         }
+
+        // Move Player Into Position
+        // Make Player Look At Zombie
     }
 
     public void EndGrab(){
@@ -43,7 +46,7 @@ public class PlayerStatus : Status, IStatus
         ControllerReferences.playerKnockback.AddImpact(-transform.forward, 15f);
         Invoke("ResetDamage", iFrames);
     }
-    
+#endregion
     
     public void Die()
     {
