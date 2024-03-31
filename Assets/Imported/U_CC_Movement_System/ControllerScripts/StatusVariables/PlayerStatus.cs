@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStatus : Status, IStatus
 {
     [SerializeField] private Behaviour[] behavioursToDisableOnGrab;
-    [SerializeField] private float iFrames = 1f;
+    [Tooltip("This value is set in Seconds")][SerializeField] private float iFrames = 1f;
 
     public void TakeDamage()
     {
@@ -24,6 +24,7 @@ public class PlayerStatus : Status, IStatus
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "Grab Trigger" && canTakeDamage){
+            Debug.Log("Player Grabbed!");
             GrabbedByZombie(other);
         }
     }
@@ -33,8 +34,10 @@ public class PlayerStatus : Status, IStatus
         foreach(Behaviour i in behavioursToDisableOnGrab){
             i.enabled = false;
         }
-
+        ControllerReferences.playerAnim.SetInteger("Walking", 0);
         // Move Player Into Position
+        StartCoroutine(LerpPosition(other.transform.position));
+
         // Make Player Look At Zombie
     }
 
@@ -50,7 +53,7 @@ public class PlayerStatus : Status, IStatus
     // Smooth Damp Interpolation for Zombie Grab Movement
     [SerializeField] private AnimationCurve interpolationCurve;
     [SerializeField] private float interpolationDuration = 0.75f;
-    private IEnumerator LerpValue(Vector3 endPosition){
+    private IEnumerator LerpPosition(Vector3 endPosition){
         float timeElapsed = 0f;
 
         while(timeElapsed < interpolationDuration){

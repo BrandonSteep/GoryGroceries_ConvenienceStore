@@ -15,6 +15,7 @@ public class StateMachineController : MonoBehaviour
 
     private FieldOfView fieldOfView;
 
+    #region Core State Machine Functionality
     void Start(){
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<ZombieAnimationController>();
@@ -38,7 +39,13 @@ public class StateMachineController : MonoBehaviour
         currentState = nextState;
         currentState.EnterState(this);
     }
+    
+    public _State CheckCurrentState(){
+        return currentState;
+    }
+    #endregion
 
+    #region Set Specific States
     public void SetMoveState(){
         TransitionState(moveState);
     }
@@ -46,7 +53,9 @@ public class StateMachineController : MonoBehaviour
     public void SetBiteState(){
         TransitionState(biteState);
     }
+    #endregion
 
+    #region Navigation
     public void SetNav(bool active){
         if(active){
             nav.enabled = true;
@@ -60,26 +69,20 @@ public class StateMachineController : MonoBehaviour
         }
     }
 
-    public void SetAnimBool(string name, bool value){
-        anim.SetBool(name, value);
-    }
-
     public void SetNavDestination(Vector3 destPos){
         nav.SetDestination(destPos);
     }
+    #endregion
 
-    public _State CheckCurrentState(){
-        return currentState;
+    public void SetAnimBool(string name, bool value){
+        anim.SetBool(name, value);
     }
 
     public _State CheckFOV(_State successState, _State failState){
         return fieldOfView.CheckFOV(this, successState, failState);
     }
 
-
-
-#region Track Player
-
+    #region Track Player
     [SerializeField] private float lookAtSpeed;
 
     public void TrackPlayer(){
@@ -89,5 +92,5 @@ public class StateMachineController : MonoBehaviour
         
         nav.enabled = true;
     }
-#endregion
+    #endregion
 }
