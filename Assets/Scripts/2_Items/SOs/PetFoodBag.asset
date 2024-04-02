@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
   m_Name: PetFoodBag
   m_EditorClassIdentifier: 
-  itemName: Pet Food (Bag)
+  itemName: Pet Food Bag
   price: 18.42
   pickup: {fileID: 5107377357387050143, guid: 117a850c381169746bf240ff9bd86917, type: 3}
   itemInBag: {fileID: 2289440721146689845, guid: fd6366402d7c5c14c85a81d0a46a4fc3, type: 3}

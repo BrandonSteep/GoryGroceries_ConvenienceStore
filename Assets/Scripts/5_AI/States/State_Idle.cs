@@ -12,5 +12,6 @@ public class State_Idle : _State
     public override void EnterState(StateMachineController stateMachine)
     {
         stateMachine.SetNav(false);
+        stateMachine.SetAnimBool("", false);
     }
 }

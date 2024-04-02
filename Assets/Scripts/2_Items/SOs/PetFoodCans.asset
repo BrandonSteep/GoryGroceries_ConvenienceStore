@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c275c5b919144d44aae1195333810f7, type: 3}
   m_Name: PetFoodCans
   m_EditorClassIdentifier: 
-  itemName: Pet Food (Cans)
+  itemName: Pet Food Cans
   price: 7.75
   pickup: {fileID: 519431881934197187, guid: ec294cd41a2f24945b8c1200c947822d, type: 3}
   itemInBag: {fileID: 6915849342250692074, guid: 40b17773ab73aa4499825b783b805ab3, type: 3}
