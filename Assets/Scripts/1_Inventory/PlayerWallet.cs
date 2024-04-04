@@ -12,6 +12,11 @@ public class PlayerWallet : MonoBehaviour
         RefreshPlayerMoneyUI();
     }
 
+    public void RefreshPlayerMoneyUI(){
+        // Debug.Log($"Player Money = {playerMoney.value.ToString("c2")}");
+        playerMoneyUI.SetPrice(playerMoney.value);
+    }
+
     public bool PayForShopping(float shoppingTotal){
         if(playerMoney.value >= shoppingTotal && shoppingTotal > 0f){
             playerMoney.value -= shoppingTotal;
@@ -23,8 +28,8 @@ public class PlayerWallet : MonoBehaviour
         }
     }
 
-    public void RefreshPlayerMoneyUI(){
-        // Debug.Log($"Player Money = {playerMoney.value.ToString("c2")}");
-        playerMoneyUI.SetPrice(playerMoney.value);
+    public void AddMoney(float moneyIn){
+        playerMoney.value += moneyIn;
+        RefreshPlayerMoneyUI();
     }
 }
