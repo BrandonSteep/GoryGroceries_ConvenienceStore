@@ -18,6 +18,8 @@ public class PlayerGrabbed : MonoBehaviour
         StateMachineController grabbingEnemy = other.transform.parent.GetComponent<StateMachineController>();
         grabbingEnemy.SetAnimTrigger("Bite");
 
+        GetComponent<CameraShake>().MidShake();
+
         ControllerReferences.playerController.ControllerDisabled();
         // ControllerReferences.playerController.enabled = false;
 

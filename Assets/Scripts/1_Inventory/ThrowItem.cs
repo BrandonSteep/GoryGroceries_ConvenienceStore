@@ -41,6 +41,7 @@ public class ThrowItem : MonoBehaviour
             }
 
             throwEvent.Raise();
+            ControllerReferences.cameraShake.TinyShake();
             StartCoroutine(RemoveRigidBody(thrownItem));
         }
     }

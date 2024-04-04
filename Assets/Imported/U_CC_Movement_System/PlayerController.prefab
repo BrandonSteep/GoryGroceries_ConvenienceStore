@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 2004785541}
   - component: {fileID: 2004785535}
   - component: {fileID: 2004785534}
+  - component: {fileID: 1969887109}
   m_Layer: 10
   m_Name: PlayerController
   m_TagString: Player
@@ -1254,6 +1255,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1969887109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187244767781740151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1c66920d5a6844697dc2a5db3f7500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeEnabled: 1
+  tinyShakeDuration: 0.1
+  tinyShakeMagnitude: 0.0075
+  smallShakeDuration: 0.15
+  smallShakeMagnitude: 0.01
+  midShakeDuration: 0.15
+  midShakeMagnitude: 0.005
+  bigShakeDuration: 0
+  bigShakeMagnitude: 0
 --- !u!1 &5187244767959568311
 GameObject:
   m_ObjectHideFlags: 0

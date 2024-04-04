@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     float cameraPitch = 0.0f;
     Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
+    private CameraShake shake;
 
 
     // GRAVITY //
@@ -72,6 +73,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerCamera = ControllerReferences.cam.transform;
+        shake = GetComponent<CameraShake>();
         
         if (lockCursor)
         {
@@ -155,6 +157,7 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
 
+        playerCamera.transform.position += shake.GetPosition();
     }
     #endregion
 

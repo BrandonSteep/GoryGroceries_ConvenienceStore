@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8524841783729343823}
   - component: {fileID: 8524841783729343820}
   - component: {fileID: 8524841783729343822}
+  - component: {fileID: 9210064437611539845}
   m_Layer: 6
   m_Name: "\xA32"
   m_TagString: Interactable
@@ -148,3 +149,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9210064437611539845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148293239005652248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39165ce884f86d4e808431b5e3b80f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 1
+  rbDisableTimer: 1
+  rbDisableTimerCurrent: 1
+  physicsOnEnable: 1

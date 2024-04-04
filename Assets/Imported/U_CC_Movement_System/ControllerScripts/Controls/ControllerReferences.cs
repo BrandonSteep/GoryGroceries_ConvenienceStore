@@ -16,6 +16,7 @@ public class ControllerReferences : MonoBehaviour
     public static Animator playerAnim;
     public static PlayerInventory playerInventory;
     public static PlayerWallet playerWallet;
+    public static CameraShake cameraShake;
 
 
 
@@ -31,6 +32,7 @@ public class ControllerReferences : MonoBehaviour
         playerAnim = player.GetComponent<Animator>();
         playerInventory = GameObject.FindWithTag("Inventory").GetComponent<PlayerInventory>();
         playerWallet = GameObject.FindWithTag("Inventory").GetComponent<PlayerWallet>();
+        cameraShake = GetComponent<CameraShake>();
     }
 
 
