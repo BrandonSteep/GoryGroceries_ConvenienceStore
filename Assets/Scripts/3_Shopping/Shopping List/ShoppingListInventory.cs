@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -9,7 +8,6 @@ public class ShoppingListInventory : MonoBehaviour
     [SerializeField] private AvailableShoppingListItemsSO availableItems;
     [SerializeField] private AvailableShoppingListItemsSO manualItems;
     public List<ShoppingItem> selectedItems = new List<ShoppingItem>();
-    // [SerializeField] private CurrentShoppingItemsSO currentItems;
     public int numberOfListItems;
 
     [Header("UI")]
@@ -23,9 +21,7 @@ public class ShoppingListInventory : MonoBehaviour
         }
 
         if(numberOfListItems > availableItems.availableItems.Length){
-            Debug.LogWarning("Fewer Shopping Items than Number Requests - Please Check Number Of List Items or Add More Items to the Available Items SO");
-            
-            Debug.Log($"Reducing Item Count to {availableItems.availableItems.Length}");
+            Debug.LogWarning($"Fewer Shopping Items than Number Requests - Reducing Item Count to {availableItems.availableItems.Length}");
             numberOfListItems = availableItems.availableItems.Length;
             GenerateNewList();
         }
