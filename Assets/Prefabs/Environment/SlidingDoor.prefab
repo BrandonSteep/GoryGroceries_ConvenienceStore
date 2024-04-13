@@ -515,7 +515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5658851109276546865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 1.62, z: 1.375}
+  m_LocalPosition: {x: 5, y: 1.62, z: 1.3125}
   m_LocalScale: {x: 0.5, y: 3.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -891,8 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c6edee0657f934ababd4f6087f62da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoppingList: {fileID: 0}
-  currentItems: {fileID: 11400000, guid: ffbe89f392159cd47b640988aa588a19, type: 2}
+  exitEvent: {fileID: 11400000, guid: ebcfa3945ff5d9b428440ffa852170b0, type: 2}
 --- !u!1 &5658851110306916494
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5658851110457636941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 1.62, z: -1.375}
+  m_LocalPosition: {x: 5, y: 1.62, z: -1.3125}
   m_LocalScale: {x: 0.5, y: 3.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []

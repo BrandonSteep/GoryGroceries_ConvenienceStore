@@ -122,10 +122,15 @@ public class CheckoutInventory : MonoBehaviour
 
     public void CheckoutSuccessful(){
         var shoppingListInventory = GameObject.FindWithTag("Shopping List").GetComponent<ShoppingListInventory>();
+        var otherItemTracker = ControllerReferences.playerInventory.transform.GetComponent<OtherItemTracker>();
+
         for(int i = 0; i < itemsScanned.Count; i++){
             ShoppingItem shoppingListitem = shoppingListInventory.selectedItems.Find(f => f.itemSO == itemsScanned[i]);
             if(shoppingListitem != null){
                 shoppingListInventory.UpdateShoppingListItemStatus(itemsScanned[i], ShoppingItemStatus.Paid);
+            }
+            else {
+                otherItemTracker.AddNewPaidItem(itemsScanned[i]);
             }
         }
 

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static List<ShoppingItem> currentItems = new List<ShoppingItem>();
+    public static List<OtherItem> otherItems = new List<OtherItem>();
     public static int currentPoints;
 
     void Awake(){

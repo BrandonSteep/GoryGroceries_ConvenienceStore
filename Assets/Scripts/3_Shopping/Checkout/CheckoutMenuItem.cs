@@ -27,7 +27,7 @@ public class CheckoutMenuItem : MonoBehaviour
         priceTextBox.text = $"{price.ToString("n2")}";
     }
 
-        public void SetPriceManually(string price){
+    public void SetPriceManually(string price){
         priceTextBox.text = $"{price}";
     }
 }
