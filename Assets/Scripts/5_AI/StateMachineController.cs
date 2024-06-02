@@ -1,15 +1,18 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class StateMachineController : MonoBehaviour
 {
-    [SerializeField] private _State startState;
+    [SerializeField] private _State[] startStates;
     [SerializeField] private _State currentState;
     [SerializeField] private _State moveState;
     [SerializeField] private _State biteState;
     [SerializeField] private LookAt lookAt;
     [SerializeField] private Transform focalPoint;
+
+    private float timeInState = 0f;
     
     private NavMeshAgent nav;
     private ZombieAnimationController anim;
@@ -22,8 +25,14 @@ public class StateMachineController : MonoBehaviour
         anim = GetComponent<ZombieAnimationController>();
         fieldOfView = GetComponent<FieldOfView>();
 
-        TransitionState(startState);
+        int i = 0;
+        if(startStates.Count() > 1){
+            i = Random.Range(0, startStates.Count());
+        }
 
+        Debug.Log(startStates.Count());
+
+        TransitionState(startStates[i]);
         InvokeRepeating("RunState", 0f, 0.15f);
     }
 
@@ -43,6 +52,19 @@ public class StateMachineController : MonoBehaviour
     
     public _State CheckCurrentState(){
         return currentState;
+    }
+
+    public bool TriggerAfterTimeElapsed (float triggerDuration){
+        timeInState += Time.deltaTime * 10;
+        if(timeInState >= triggerDuration){
+            timeInState = 0f;
+            return true;
+        }
+        else return false;
+    }
+
+    public void LogMessage(string message){
+        Debug.Log(message);
     }
     #endregion
 

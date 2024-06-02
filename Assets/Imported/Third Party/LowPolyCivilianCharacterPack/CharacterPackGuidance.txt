@@ -1,0 +1,12 @@
+
+Low Poly Character Pack Guidance
+
+1.) All character and weapon models are FBX Scale of 1.0 in Unity. They were designed at real world scale using Meters. Make sure all model files are set to 1.0 (including animation model files).
+
+2.) I have bundled in the "Mobile Vertex Colored" shader in the Unity package. This will allow for a material that uses the model's vertex coloring for shading, etc. It's the cheapest solution for mobile usage, by avoiding using dynamic lighting. You can however choose to use any material type you wish.
+
+3.) For Character Texture Variation, I have applied different materials to the models you want to have different looks. By default the characters use the first material available. You can also apply materials manually or change them at runtime via script for variations in the characters.
+
+4.) Supplemental to the notes above. I have created prefabs for each character variation, each applied with their own unique material/texture. This way you have the means to access each and every character variation easily. 
+
+5.) The characters utilize Unity's built in "@" functionality for animations. Any character file with the model name suffixed by "@" + animation name will automatically apply the animations to the main character model. It's a very versatile way to allow for easy editing of individual animations without have to split animations on a single model. I've found splitting animations can produce animation glitches if animation compression is used. By default animation compression is applied, but if you need cleaner animation turn it off. Make sure to check file sizes for animations as well. Compression can reduce the file sizes, but might introduce artifacts.

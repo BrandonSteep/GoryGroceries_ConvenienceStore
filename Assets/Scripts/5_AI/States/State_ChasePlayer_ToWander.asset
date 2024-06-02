@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a32e4a3727b4ec44b0b870d1ffed200, type: 3}
+  m_Name: State_ChasePlayer_ToWander
+  m_EditorClassIdentifier: 
+  stateDecision: {fileID: 11400000, guid: cfabbb98860a3f146995b2f0086fb48d, type: 2}
+  moveSpeed: 1

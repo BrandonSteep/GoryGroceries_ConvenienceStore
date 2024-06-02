@@ -12,4 +12,5 @@ public class _State : ScriptableObject
     }
 
     public virtual void EnterState(StateMachineController stateMachine){}
+    public virtual void ExitState(StateMachineController stateMachine){}
 }
