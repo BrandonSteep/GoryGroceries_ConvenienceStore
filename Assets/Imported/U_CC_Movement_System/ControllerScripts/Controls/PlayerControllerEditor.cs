@@ -20,6 +20,9 @@ public class PlayerControllerEditor : Editor
     SerializedProperty gravity;
     SerializedProperty moveSmoothTime;
     SerializedProperty mouseSmoothTime;
+    SerializedProperty playerFov;
+    SerializedProperty fovZoomAmount;
+    SerializedProperty fovZoomTime;
 
     bool showMovement, showMouseLook = false;
     
@@ -38,6 +41,9 @@ public class PlayerControllerEditor : Editor
         gravity = serializedObject.FindProperty("gravity");
         moveSmoothTime = serializedObject.FindProperty("moveSmoothTime");
         mouseSmoothTime = serializedObject.FindProperty("mouseSmoothTime");
+        playerFov = serializedObject.FindProperty("playerFov");
+        fovZoomAmount = serializedObject.FindProperty("fovZoomAmount");
+        fovZoomTime = serializedObject.FindProperty("fovZoomTime");
     }
 
     public override void OnInspectorGUI()
@@ -65,6 +71,9 @@ public class PlayerControllerEditor : Editor
         if(showMouseLook){
             EditorGUILayout.PropertyField(mouseSensitivity);
             EditorGUILayout.PropertyField(mouseSmoothTime);
+            EditorGUILayout.PropertyField(playerFov);
+            EditorGUILayout.PropertyField(fovZoomAmount);
+            EditorGUILayout.PropertyField(fovZoomTime);
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -45,6 +46,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float mouseSensitivity = 3.5f;
     //[SerializeField] float aimSpeed = 2.0f;
 
+    [SerializeField] private float playerFov = 75f;
+    [SerializeField] private float fovZoomAmount = 55;
+    [SerializeField] private float fovZoomTime = 0.5f;
+    private bool fovZoomActive = false;
+    private bool currentlyZooming = false;
+
     [SerializeField] bool lockCursor = true;
 
     float cameraPitch = 0.0f;
@@ -74,6 +81,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerCamera = ControllerReferences.cam.transform;
         shake = GetComponent<CameraShake>();
+        Camera.main.fieldOfView = playerFov;
         
         if (lockCursor)
         {
@@ -120,6 +128,13 @@ public class PlayerController : MonoBehaviour
         if (aiming == 1f)
         {
             currentWalkSpeed *= aimWalkSpeedMultiplier;
+            if(!fovZoomActive && !currentlyZooming){
+                StartZoomIn();
+            }
+        }
+        else if (fovZoomActive && !currentlyZooming){
+            StopCoroutine("ZoomFOV");
+            StartZoomOut();
         }
 
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * currentWalkSpeed + Vector3.up * velocityY;
@@ -158,6 +173,41 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
 
         playerCamera.transform.position += shake.GetPosition();
+    }
+
+    public void StartZoomIn()
+    {
+        StartCoroutine(ZoomFOV(Camera.main.fieldOfView, fovZoomAmount, true));
+        fovZoomActive = true;
+    }
+
+    public void StartZoomOut()
+    {
+        StartCoroutine(ZoomFOV(Camera.main.fieldOfView, playerFov, false));
+        fovZoomActive = false;
+    }
+
+    private IEnumerator ZoomFOV(float startFOV, float endFOV, bool zoomIn){
+        currentlyZooming = true;
+        if(zoomIn){
+            fovZoomActive = true;
+        }
+        else{
+            fovZoomActive = false;
+        }
+
+        float t = 0.0f;
+
+        // continue the lerp for the time we have left
+        while(t < fovZoomTime)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(startFOV, endFOV, t / fovZoomTime);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        Camera.main.fieldOfView = endFOV;
+        currentlyZooming = false;
     }
     #endregion
 
