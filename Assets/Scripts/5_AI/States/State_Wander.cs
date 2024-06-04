@@ -43,13 +43,12 @@ public class State_Wander : _State
 
 
 #region Initialisation
-    public override void EnterState(StateMachineController stateMachine)
-    {
+    public override void EnterState(StateMachineController stateMachine){
         _wanderDestination = GetRandomPosition(stateMachine);
         base.EnterState(stateMachine);
     }
 
-    public override void ExitState(StateMachine){
+    public override void ExitState(StateMachineController stateMachine){
 
     }
     #endregion

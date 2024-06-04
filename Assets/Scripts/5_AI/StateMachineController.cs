@@ -30,7 +30,7 @@ public class StateMachineController : MonoBehaviour
             i = Random.Range(0, startStates.Count());
         }
 
-        Debug.Log(startStates.Count());
+        Debug.Log(i);
 
         TransitionState(startStates[i]);
         InvokeRepeating("RunState", 0f, 0.15f);
@@ -46,6 +46,9 @@ public class StateMachineController : MonoBehaviour
     }
 
     private void TransitionState(_State nextState){
+        if(currentState != null){
+            currentState.ExitState(this);
+        }
         currentState = nextState;
         currentState.EnterState(this);
     }
