@@ -6,3 +6,7 @@ https://www.dafont.com/foul-fiend.font?l[]=10&l[]=1
 
 - Fake Receipt by Typodermic Fonts
 https://www.dafont.com/fake-receipt.font
+
+- Planar Reflections by eldskald (on GitHub)
+https://github.com/eldskald/planar-reflections-unity
+

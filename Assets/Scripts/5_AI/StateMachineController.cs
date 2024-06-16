@@ -12,6 +12,9 @@ public class StateMachineController : MonoBehaviour
     [SerializeField] private LookAt lookAt;
     [SerializeField] private Transform focalPoint;
 
+    [SerializeField] private float minMoveSpeed = 1f;
+    [SerializeField] private float maxMoveSpeed = 1f;
+
     private float timeInState = 0f;
     
     private NavMeshAgent nav;
@@ -23,6 +26,8 @@ public class StateMachineController : MonoBehaviour
     void Start(){
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<ZombieAnimationController>();
+        anim.SetFloat("MoveSpeed", Random.Range(minMoveSpeed, maxMoveSpeed));
+
         fieldOfView = GetComponent<FieldOfView>();
 
         int i = 0;

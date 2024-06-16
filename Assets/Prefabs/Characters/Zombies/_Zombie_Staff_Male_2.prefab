@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 1434959544158284580}
   - component: {fileID: 4362839071702646141}
   m_Layer: 0
-  m_Name: LowPolyMan
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1450,7 +1450,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6247075627004734857, guid: d7047f1851fc7c946a8562e6f07986d0, type: 3}
+  - {fileID: 2100000, guid: 50dfb29b8e366664fa87d938b761d373, type: 2}
   - {fileID: 7020724104178308819, guid: d7047f1851fc7c946a8562e6f07986d0, type: 3}
   - {fileID: -3885572638183995920, guid: d7047f1851fc7c946a8562e6f07986d0, type: 3}
   - {fileID: 2504516506940294678, guid: d7047f1851fc7c946a8562e6f07986d0, type: 3}
@@ -4035,12 +4035,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b29b687da5eade4e9dea296b75ec95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startState: {fileID: 11400000, guid: f50a19783e9be09489fc01c6fba2d41a, type: 2}
+  startStates:
+  - {fileID: 11400000, guid: f50a19783e9be09489fc01c6fba2d41a, type: 2}
+  - {fileID: 11400000, guid: 1f0b387261a75704fb641b03310b9720, type: 2}
   currentState: {fileID: 0}
   moveState: {fileID: 11400000, guid: 2af3fb0be9ecb4646b90d4f43aecef28, type: 2}
   biteState: {fileID: 0}
   lookAt: {fileID: 1510445404204746877}
   focalPoint: {fileID: 5082327836509937739}
+  minMoveSpeed: 0.75
+  maxMoveSpeed: 1.25
   lookAtSpeed: 3
   interpolationCurve:
     serializedVersion: 2
@@ -4115,7 +4119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 6
-  angle: 145
+  angle: 160
   targetMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -5753,7 +5757,7 @@ Transform:
   m_GameObject: {fileID: 4871495269522454302}
   m_LocalRotation: {x: 0.7071068, y: -0.00011509249, z: -0.0001150925, w: -0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 110, y: 115, z: 105}
+  m_LocalScale: {x: 115, y: 115, z: 105}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4319244713063752959}

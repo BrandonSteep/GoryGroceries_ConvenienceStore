@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3745177957492356999
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RainyRipples
+  m_Shader: {fileID: -6465566751694194690, guid: 5397e877cd8af974f9a7bb910648df7c, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: d3252ef1a6a89d348aab9617c5664fb5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 3b1b5f606ec14da449941721d296deeb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RippleTexture:
+        m_Texture: {fileID: 2800000, guid: 09e635c98f83cca4599ef11a8457e154, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ripple_Texture:
+        m_Texture: {fileID: 2800000, guid: 09e635c98f83cca4599ef11a8457e154, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Sheet_Water:
+        m_Texture: {fileID: 2800000, guid: a826d3c0fa73d764997ce0d5d79a4034, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
+    - _NormalAmount: 1
+    - _Normal_Amount: 2.83
+    - _RippleFPS: 1
+    - _RippleSpeed: 16
+    - _Ripple_FPS: 16
+    - _Ripple_Layer_2_Scale: 1.55
+    - _Ripple_Tiling: 4
+    - _Sheet_Water_Speed: 0.1
+    - _Sheet_Water_Strength: 0.15
+    - _Sheet_Water_Tiling: 0.9
+    - _Smoothness: 1
+    - _Tiling: 1
+    - _Warping_Density: 5
+    - _Warping_Speed: 3
+    - _Warping_Strength: 1
+    m_Colors:
+    - _Ripple_Layer_2_Offset: {r: 0.81, g: 0.6, b: 0, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

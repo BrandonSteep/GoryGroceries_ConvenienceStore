@@ -16,4 +16,4 @@ MonoBehaviour:
   moveState: {fileID: 11400000, guid: 2af3fb0be9ecb4646b90d4f43aecef28, type: 2}
   idleState: {fileID: 11400000, guid: f50a19783e9be09489fc01c6fba2d41a, type: 2}
   attackRange: 2.5
-  forgetRange: 10
+  forgetRange: 15

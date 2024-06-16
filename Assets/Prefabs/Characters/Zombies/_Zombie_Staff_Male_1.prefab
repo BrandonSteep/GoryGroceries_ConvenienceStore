@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 178217353068940947}
   - component: {fileID: 3249572129316247754}
   m_Layer: 0
-  m_Name: LowPolyMan
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3025,6 +3025,8 @@ MonoBehaviour:
   biteState: {fileID: 0}
   lookAt: {fileID: 388727598196108746}
   focalPoint: {fileID: 6276656247636837884}
+  minMoveSpeed: 0.75
+  maxMoveSpeed: 1.25
   lookAtSpeed: 3
   interpolationCurve:
     serializedVersion: 2
@@ -3099,7 +3101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 6
-  angle: 145
+  angle: 160
   targetMask:
     serializedVersion: 2
     m_Bits: 1024

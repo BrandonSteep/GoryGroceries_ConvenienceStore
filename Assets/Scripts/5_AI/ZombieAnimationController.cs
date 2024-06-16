@@ -18,6 +18,10 @@ public class ZombieAnimationController : MonoBehaviour
         anim.SetInteger("IdleIndex", Random.Range(0, maxIdleAnims));
     }
 
+    public void SetFloat(string param, float i){
+        anim.SetFloat(param, i);
+    }
+
     public void SetRandomWalkAnim(){
         anim.SetInteger("WalkIndex", Random.Range(0, maxWalkAnims));
     }
