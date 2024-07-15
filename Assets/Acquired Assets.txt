@@ -1,3 +1,5 @@
+~ VISUALS ~
+
 - Paul Signature by cove703
 https://www.dafont.com/paul-signature.font?l[]=10&l[]=1
 
@@ -7,6 +9,34 @@ https://www.dafont.com/foul-fiend.font?l[]=10&l[]=1
 - Fake Receipt by Typodermic Fonts
 https://www.dafont.com/fake-receipt.font
 
-- Planar Reflections by eldskald (on GitHub)
-https://github.com/eldskald/planar-reflections-unity
+- Alphabet And Number With Car Plate Free by StrifeLimArtist
+https://www.turbosquid.com/3d-models/3d-alphabet-and-number-with-car-plate-free-model-2089667
 
+- Office Ceiling 02 by Lennart Demes at AmbientCG
+https://ambientcg.com/view?id=OfficeCeiling002
+
+- Office Ceiling Tiles by TextureCan
+https://www.texturecan.com/details/131/#google_vignette
+
+- Long Dark Ash Wood Planks (Wood 0038) by TextureCan
+https://www.texturecan.com/details/389/
+
+
+
+~ AUDIO ~
+
+- Neon Tube Light Flickering by bolkmar
+https://freesound.org/people/bolkmar/sounds/500693/
+
+- Jazz Swing Drums by NoNamedMusic
+https://www.looperman.com/loops/detail/335550/jazz-swing-drums-free-155bpm-jazz-drum-loop
+
+- Dreamy Eerie Vocal by Ping Pong
+https://samplefocus.com/samples/dreamy-eerie-vocal
+
+
+
+~ CODE ~
+
+- Planar Reflections by eldskald (GitHub)
+https://github.com/eldskald/planar-reflections-unity

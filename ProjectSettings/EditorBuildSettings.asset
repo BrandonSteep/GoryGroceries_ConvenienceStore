@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype/GG_Menu.unity
     guid: 3f1e921350220734893adc6446db4481
   - enabled: 1
-    path: Assets/Scenes/Prototype/GG_TestLevel_Tesco.unity
-    guid: ffed71b5630d7474f92467305704764c
+    path: Assets/Scenes/Prototype/GG_TestLevel_Z-Mart_Small_Greybox.unity
+    guid: 8f8152c0fd3ce644d8f4df4988cb0081
   - enabled: 1
     path: Assets/Scenes/Prototype/GG_MissionComplete.unity
     guid: 822cbf754d4bcfd4e9e9257f5023c980
   - enabled: 0
     path: Assets/Scenes/Prototype/GG_Loop.unity
     guid: 13f69464e2f3608488675042e0cad4b9
+  - enabled: 1
+    path: Assets/Scenes/Prototype/GG_TestLevel_Tesco.unity
+    guid: ffed71b5630d7474f92467305704764c
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
