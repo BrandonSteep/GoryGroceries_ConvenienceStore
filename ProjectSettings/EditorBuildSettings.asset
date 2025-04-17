@@ -14,13 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype/GG_MissionComplete.unity
     guid: 822cbf754d4bcfd4e9e9257f5023c980
-  - enabled: 0
-    path: Assets/Scenes/Prototype/GG_Loop.unity
-    guid: 13f69464e2f3608488675042e0cad4b9
   - enabled: 1
     path: Assets/Scenes/Prototype/GG_TestLevel_Tesco.unity
     guid: ffed71b5630d7474f92467305704764c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}

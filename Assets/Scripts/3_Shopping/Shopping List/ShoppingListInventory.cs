@@ -7,6 +7,8 @@ public class ShoppingListInventory : MonoBehaviour
     [SerializeField] private AvailableShoppingListItemsSO availableItems;
     [SerializeField] private AvailableShoppingListItemsSO manualItems;
     public List<ShoppingItem> selectedItems = new List<ShoppingItem>();
+    [SerializeField] private int minNumberOfListItems = 4;
+    [SerializeField] private int maxNumberOfListItems = 7;
     public int numberOfListItems;
 
     [Header("UI")]
@@ -15,6 +17,8 @@ public class ShoppingListInventory : MonoBehaviour
 #region Enable & Disable
     void OnEnable()
     {
+        numberOfListItems = Random.Range(minNumberOfListItems, maxNumberOfListItems);
+
         if(!uiSetter){
             uiSetter = GetComponent<ShoppingListUISetter>();
         }

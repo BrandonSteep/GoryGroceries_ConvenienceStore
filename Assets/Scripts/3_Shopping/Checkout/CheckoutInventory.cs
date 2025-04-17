@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class CheckoutInventory : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class CheckoutInventory : MonoBehaviour
     [Header("Flags")]
     public bool canScan = true;
     public bool hasPaid = false;
+
+    [Header("Effect Events")]
+    [SerializeField] private UnityEvent onItemScanned;
     
 
     void Start(){
@@ -49,6 +53,7 @@ public class CheckoutInventory : MonoBehaviour
 
         if(canScan && itemToScan != null){
             AddItem(itemToScan);
+            onItemScanned.Invoke();
         }
     }
 
