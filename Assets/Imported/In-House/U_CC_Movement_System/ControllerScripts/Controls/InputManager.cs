@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     PlayerController playerController;
     [SerializeField] private GameEvent inventoryEvent;
     [SerializeField] private GameEvent throwItem;
+    [SerializeField] private GameEvent toggleTutorial;
 
     PlayerControls controls;
     PlayerControls.LocomotionInputActions locomotionInput;
@@ -55,6 +56,9 @@ public class InputManager : MonoBehaviour
 
         locomotionInput.NextItem.performed += _ => ControllerReferences.playerInventory.currentlyEquipped.EquipNextSlot();
         locomotionInput.PreviousItem.performed += _ => ControllerReferences.playerInventory.currentlyEquipped.EquipPreviousSlot();
+
+        // Tutorial
+        locomotionInput.Tutorial.performed += _ => toggleTutorial.Raise();
     }
 
     private void Update()

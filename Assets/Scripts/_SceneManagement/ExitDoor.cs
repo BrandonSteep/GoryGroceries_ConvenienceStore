@@ -9,7 +9,7 @@ public class ExitDoor : MonoBehaviour
         exitEvent.Raise();
         
         if(other.tag == "Player"){
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 }
